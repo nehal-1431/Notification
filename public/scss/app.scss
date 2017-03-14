@@ -1,0 +1,113 @@
+
+@font-face{
+  font-family: 'Myriad Set Pro';
+  src: url('../font/myriad-set-pro-ultralight-58c784623948a.ttf') format("truetype");
+}
+
+@font-face
+{
+  font-family: 'Myriad Set Pro';
+  src: url('../font/myriad-set-pro-text-58c77f4dd34f6.ttf') format("truetype");
+}
+
+
+
+@mixin panel($type,$color,$size,$align,$weight) 
+{
+  font-family: $type;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  text-align: $align;
+}
+
+.panel-title
+{ 
+  @include panel('Myriad Set Pro',floralwhite,20px,end,lighter);
+  position: relative;
+  z-index: 2;
+  bottom: 0px;
+  background-color: black;
+}
+
+.panel-firstrow{
+  @include panel('Myriad Set Pro',#333,20px,center,normal);
+  border: 1px solid #bdbdbd;
+}
+
+@mixin taskpanel($width,$height,$left,$align) {
+  width: $width;
+  margin-left: $left; 
+  height: $height;
+  text-align: $align;
+}
+
+#taskpanel{
+   @include taskpanel(100%,100px,26px,center);
+   margin-top: 45px;
+   border: 1 px solid black;
+}
+
+.taskpanel1, .taskpanel2, .taskpanel3
+{
+  @include taskpanel(20%,40px,60px,center);
+  float: left;
+  background-color: white;
+  border: 1 px solid #bdbdbd;
+}
+
+
+.taskcnt{
+    @include panel('Myriad Set Pro',#47ACF5,60px,end,lighter);
+ }
+
+.taskText, .reminderText, .notificationText{
+  @include panel('Myriad Set Pro', #999,16px,center,normal);
+  padding-top: 0 px;
+  vertical-align: top;
+  display: block;
+}
+
+/* override bootstrap styles */
+.row{
+  margin-right: -15px;
+  margin-left: 0 px;
+}
+
+.panel{
+  margin-bottom: 50px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+#hr {
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+/****/
+
+.panelborder{
+  border: 1px solid #bdbdbd;
+}
+
+.title
+{
+  @include panel('Myriad Set Pro', #333,14px,start,bold); 
+  height: 18px;
+  margin-left: 100px;
+  margin-right: 26px;
+}
+
+.desc{
+@include panel('Myriad Set Pro', #757575,14px,start,normal); 
+  display: block;
+  height: 14px;
+  margin-left: 0px;
+  margin-right: 26px;
+  margin-bottom: 18px;
+}

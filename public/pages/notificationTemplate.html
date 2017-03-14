@@ -1,0 +1,30 @@
+ <div class="container-fluid">
+            <div class="row">
+                <div class="panel-title"><span class="glyphicon glyphicon-bell"></span> &nbsp;Jhonny Applease</div>
+            </div>
+            <div class="row">
+                <div class="panel-firstrow">
+                    <span id="formateddate">{{model.getDate()}}</span>
+                </div>
+            </div>           
+            <div id="taskpanel" class="row">
+                <div class="taskpanel1">
+                    <span id="tasks-count" class="taskcnt">{{model.taskCount}}</span>
+                    <span class="taskText">Assigned Tasks</span>
+                </div>
+                <div class="taskpanel2">
+                    <span id="reminders-count" class="taskcnt">{{model.reminderCount}}</span>
+                    <span class="reminderText">Reminders</span>
+                    </div>
+                <div class="taskpanel3">
+                    <span id="notifications-count" class="taskcnt">{{model.notificationCount}}</span>
+                    <span class="notificationText">Notifications</span>
+                </div>
+            </div>
+            <br>
+            <div class="row panelborder">
+              <div id="notificationInfo" class='panel title' ng-repeat="val in model.tasks | orderBy:'$index':true">{{val.time}}
+                   <span class="panel desc">{{val.task}}</span><hr/></div>
+            </div> 
+                  
+</div>
